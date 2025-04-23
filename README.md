@@ -1,5 +1,3 @@
-![Happy-Box.png](https://github.com/user-attachments/assets/07f72551-c80d-496c-83cb-8a57dce926c6)
-
 # Toy Control System — Testes Automatizados e Performance com Postman, Selenium e K6
 
 🧸 Esse projeto teve como foco principal garantir a qualidade de uma aplicação web de gerenciamento de brinquedos por meio de testes automatizados — tanto funcionais (interface e API), quanto não-funcionais (performance).
