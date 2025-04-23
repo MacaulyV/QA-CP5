@@ -1,0 +1,152 @@
+{
+	"id": "312d00ec-e184-4888-bbf0-1367834de9f0",
+	"name": "API - Gestão de Brinquedos",
+	"timestamp": "2025-04-18T20:11:32.140Z",
+	"collection_id": "44225402-7f2280ac-2a95-4d87-8dab-33564a8a30af",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 5,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2025-04-18T20:11:31.530Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "8ee64c18-289f-49db-aaa5-9f3b86d02345",
+			"name": "Criar brinquedos",
+			"url": "http://localhost:8080/api/brinquedos",
+			"time": 70,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Criação com sucesso": true
+			},
+			"testPassFailCounts": {
+				"Criação com sucesso": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				70
+			],
+			"allTests": [
+				{
+					"Criação com sucesso": true
+				}
+			]
+		},
+		{
+			"id": "420322f6-c243-49c5-a15b-78d4e518f9bc",
+			"name": "Listar Brinquedos",
+			"url": "http://localhost:8080/api/brinquedos",
+			"time": 46,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status 200 OK": true,
+				"Retorno deve conter lista de brinquedos": true
+			},
+			"testPassFailCounts": {
+				"Status 200 OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Retorno deve conter lista de brinquedos": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				46
+			],
+			"allTests": [
+				{
+					"Status 200 OK": true,
+					"Retorno deve conter lista de brinquedos": true
+				}
+			]
+		},
+		{
+			"id": "601005f8-41b2-4594-8a91-3dafe791e110",
+			"name": "Editar brinquedos",
+			"url": "http://localhost:8080/api/brinquedos/20",
+			"time": 48,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Atualização com sucesso": true
+			},
+			"testPassFailCounts": {
+				"Atualização com sucesso": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				48
+			],
+			"allTests": [
+				{
+					"Atualização com sucesso": true
+				}
+			]
+		},
+		{
+			"id": "c34729c9-d8ad-4b19-bf3d-c52ad2b38aa3",
+			"name": "Deletar brinquedos",
+			"url": "http://localhost:8080/api/brinquedos/20",
+			"time": 57,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {
+				"Deletado com sucesso": true
+			},
+			"testPassFailCounts": {
+				"Deletado com sucesso": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				57
+			],
+			"allTests": [
+				{
+					"Deletado com sucesso": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 221,
+	"collection": {
+		"requests": [
+			{
+				"id": "8ee64c18-289f-49db-aaa5-9f3b86d02345",
+				"method": "POST"
+			},
+			{
+				"id": "420322f6-c243-49c5-a15b-78d4e518f9bc",
+				"method": "GET"
+			},
+			{
+				"id": "601005f8-41b2-4594-8a91-3dafe791e110",
+				"method": "PUT"
+			},
+			{
+				"id": "c34729c9-d8ad-4b19-bf3d-c52ad2b38aa3",
+				"method": "DELETE"
+			}
+		]
+	}
+}

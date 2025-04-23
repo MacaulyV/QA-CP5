@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "7f2280ac-2a95-4d87-8dab-33564a8a30af",
+		"name": "API - Gestão de Brinquedos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44225402"
+	},
+	"item": [
+		{
+			"name": "Criar brinquedos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Criação com sucesso\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Brinquedo Teste\",\r\n  \"tipo\": \"Didático\",\r\n  \"classificacao\": 20,\r\n  \"tamanho\": \"Médio\",\r\n  \"preco\": 19.99\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/brinquedos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"brinquedos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Brinquedos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status 200 OK\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Retorno deve conter lista de brinquedos\", function () {\r",
+							"    const data = pm.response.json();\r",
+							"    pm.expect(data.length).to.be.above(0);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/brinquedos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"brinquedos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar brinquedos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Atualização com sucesso\", function () {\r",
+							"    pm.expect(pm.response.code).to.eql(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Atualizado\",\r\n  \"tipo\": \"Música\",\r\n  \"classificacao\": 20,\r\n  \"tamanho\": \"Grande\",\r\n  \"preco\": 149.90\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/brinquedos/20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"brinquedos",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar brinquedos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Deletado com sucesso\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 204]);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/brinquedos/20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"brinquedos",
+						"20"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
